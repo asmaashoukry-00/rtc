@@ -260,3 +260,31 @@ footer img {
     transform: translateY(-20px); /* يجعله يبدأ من الأعلى قليلاً */
     pointer-events: none; /* يمنع الضغط عليه وهو مخفي */
 }
+
+/* تحسين شكل الصور في قسم من نحن للجوال */
+@media (max-width: 768px) {
+    #about .rounded-\[2rem\] {
+        /* جعل الزوايا أقل حدة قليلاً في الجوال لتبدو أرشق */
+        border-radius: 1.5rem; 
+    }
+    
+    #about img {
+        /* ضمان عدم تمطط الصورة والحفاظ على أبعادها */
+        object-fit: cover;
+        width: 100%;
+    }
+
+    /* إضافة مساحة سفلية للسكشن لمنع تداخل الصورة مع الكلام */
+    #about .grid {
+        gap: 5rem; 
+    }
+}
+
+/* تأثير احترافي عند مرور الماوس أو اللمس */
+#about .overflow-hidden img {
+    transition: transform 0.5s ease-in-out;
+}
+
+#about .overflow-hidden:hover img {
+    transform: scale(1.05);
+}

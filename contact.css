@@ -29,3 +29,7 @@ form {
 iframe {
     filter: sepia(20%) contrast(110%);
 }
+#main-nav {
+    background-color: rgba(253, 251, 247, 0.95); /* لون خلفية خفيف */
+    backdrop-filter: blur(10px); /* تأثير زجاجي */
+}
