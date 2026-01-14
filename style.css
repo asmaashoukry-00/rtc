@@ -1,0 +1,262 @@
+:root {
+    --primary: #A17A4A;
+    --dark: #4A362D;
+    --bg: #FDFBF7;
+}
+
+/* Typography & Layout */
+body { letter-spacing: -0.02em; }
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    right: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+
+/* Achievements Cards */
+.achievement-card-new {
+    border: 1px solid rgba(161, 122, 74, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+/* Ken Burns Effect */
+.ken-burns {
+    animation: zoom-in-out 30s infinite alternate;
+}
+
+@keyframes zoom-in-out {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+/* Typography & Layout */
+body { letter-spacing: -0.02em; }
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    right: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+/* اللوح الرسمي */
+.official-slab {
+    position: relative;
+    background: #ffffff;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px; /* زوايا حادة لتعطي طابعاً رسمياً هندسياً */
+    /* ظلال مركبة تعطي إحساساً بالثقل والبروز (3D) */
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.02),
+        10px 10px 40px rgba(74, 54, 45, 0.05);
+    border-left: 4px solid #A17A4A; /* خط جانبي يعطي هوية وفخامة */
+    transition: none; /* ثابت بدون Hover */
+}
+
+/* مساحة المحتوى */
+.slab-content {
+    padding: 40px;
+    z-index: 2;
+}
+
+/* اللوجو - وضوح كامل */
+.gov-logo {
+    max-height: 140px;
+    width: auto;
+    /* إظهار اللوجو بوضوح تام مع فلتر طفيف لتوحيد المظهر */
+    filter: contrast(1.05);
+}
+
+/* لمسة جمالية خلفية (مثل الختم المائي) */
+.slab-accent {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, transparent 80%, rgba(161, 122, 74, 0.1) 80%);
+}
+
+/* تعديل للموبايل لضمان عدم الزحمة */
+@media (max-width: 768px) {
+    .official-slab {
+        height: 150px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* زر الواتساب المضيء - Neon Glow WhatsApp */
+.whatsapp-btn-fixed {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 65px;
+    height: 65px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    z-index: 9999;
+    transition: all 0.4s ease;
+    border: none;
+    outline: none;
+    /* الإضاءة الأساسية حول الزر */
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6), 
+                0 0 40px rgba(37, 211, 102, 0.4);
+    /* أنيميشن الإشعاع المستمر */
+    animation: neon-glow 2s infinite alternate;
+}
+
+/* تأثير الإشعاع (Glow) المتغير */
+@keyframes neon-glow {
+    0% {
+        box-shadow: 0 0 10px rgba(37, 211, 102, 0.5), 
+                    0 0 20px rgba(37, 211, 102, 0.3), 
+                    0 0 30px rgba(37, 211, 102, 0.2);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(37, 211, 102, 0.8), 
+                    0 0 50px rgba(37, 211, 102, 0.6), 
+                    0 0 70px rgba(37, 211, 102, 0.4);
+        transform: scale(1.05);
+    }
+}
+
+.whatsapp-btn-fixed:hover {
+    background-color: #128c7e;
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.8), 
+                0 0 60px rgba(37, 211, 102, 0.6);}
+
+/* التنسيقات العامة للفوتر */
+.nav-link {
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    right: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after { width: 100%; }
+
+.contact-icon-box {
+    width: 45px;
+    height: 45px;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 20px;
+    flex-shrink: 0;
+    transform: scaleX(1); 
+}
+
+.social-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.social-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* وضوح اللوجو */
+footer img {
+    max-width: 180px;
+    filter: none !important;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* ---- */
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.active-dot {
+    width: 35px !important;
+    background-color: #A17A4A !important;
+    border-radius: 20px;
+}
+/* ---- */
+/* منع ظهور القائمة في الشاشات الكبيرة */
+@media (min-width: 768px) {
+    #full-menu { display: none !important; }
+}
+
+/* حركة الروابط في الموبايل */
+.mobile-link {
+    transition: transform 0.3s ease;
+}
+
+.mobile-link:active {
+    transform: scale(0.9);
+}
+
+/* تثبيت اللوجو والزر فوق القائمة */
+#main-nav img, #menu-toggle {
+    position: relative;
+    z-index: 110;
+}
+/* --- */
+#main-nav {
+    opacity: 0;
+    transform: translateY(-20px); /* يجعله يبدأ من الأعلى قليلاً */
+    pointer-events: none; /* يمنع الضغط عليه وهو مخفي */
+}
