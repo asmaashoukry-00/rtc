@@ -47,10 +47,13 @@
             
             <div class="rounded-[40px] overflow-hidden shadow-2xl h-[450px] border-4 border-white relative group">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.583363402441!2d46.5492!3d24.62!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDM3JzEyLjAiTiA0NsKwMzInNTcuMSJF!5e0!3m2!1sen!2ssa!4v1642150000000!5m2!1sen!2ssa" 
-                    class="w-full h-full  transition-all duration-700" 
-                    allowfullscreen="" loading="lazy">
-                </iframe>
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14498.444763665804!2d46.548664!3d24.644367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1cc332297225%3A0x9147469799e7658c!2z2LfZh9ix2Kkg2YTYqNmG2Iwg2KfZhNix2YrYp9i2IDEzNzgx!5e0!3m2!1sar!2ssa!4v1705250000000!5m2!1sar!2ssa" 
+    class="w-full h-full transition-all duration-700" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
                 <div class="absolute top-4 right-4 bg-[#A17A4A] text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">مقرنا في الرياض</div>
             </div>
 
@@ -200,6 +203,41 @@
         <i class="fab fa-whatsapp"></i>
 
     </a>
+    
+<script>
+    // كود تشغيل القائمة في صفحة التواصل
+    const menuToggle = document.getElementById('menu-toggle');
+    const fullMenu = document.getElementById('full-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (menuToggle && fullMenu) {
+        menuToggle.addEventListener('click', () => {
+            // التحقق مما إذا كانت القائمة مخفية أم ظاهرة
+            const isVisible = fullMenu.classList.contains('invisible');
+            
+            if (isVisible) {
+                // فتح القائمة
+                fullMenu.classList.remove('invisible', 'opacity-0');
+                fullMenu.classList.add('visible', 'opacity-100');
+                // تغيير شكل الزر (إضافة تأثير بسيط)
+                menuToggle.style.transform = 'rotate(90deg)';
+            } else {
+                // إغلاق القائمة
+                fullMenu.classList.add('invisible', 'opacity-0');
+                fullMenu.classList.remove('visible', 'opacity-100');
+                menuToggle.style.transform = 'rotate(0deg)';
+            }
+        });
+
+        // إغلاق القائمة عند الضغط على أي رابط
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                fullMenu.classList.add('invisible', 'opacity-0');
+                menuToggle.style.transform = 'rotate(0deg)';
+            });
+        });
+    }
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="script.js"></script>
 
