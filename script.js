@@ -68,21 +68,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// أضيفي هذا الجزء داخل ملف script.js 
+
 
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
 let currentSlide = 0;
 
 function showSlide(index) {
-    // إخفاء جميع الصور
+    
     slides.forEach(slide => {
         slide.style.opacity = "0";
         slide.style.zIndex = "0";
     });
     dots.forEach(dot => dot.classList.remove("active-dot"));
 
-    // إظهار الصورة النشطة
+   
     slides[index].style.opacity = "1";
     slides[index].style.zIndex = "10";
     dots[index].classList.add("active-dot");
@@ -93,10 +93,10 @@ function nextSlide() {
     showSlide(currentSlide);
 }
 
-// تبديل تلقائي كل 5 ثوانٍ
+
 setInterval(nextSlide, 5000);
 
-// إضافة إمكانية الضغط على النقاط للتنقل
+
 dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
         currentSlide = index;
@@ -227,11 +227,10 @@ function openModal(serviceKey) {
 function closeModal() {
     const modal = document.getElementById('serviceModal');
     modal.classList.add('hidden');
-    document.body.style.overflow = 'auto'; // إعادة التمرير
+    document.body.style.overflow = 'auto'; 
 }
 
 // -------------
-// التحكم في القائمة الجانبية
 const menuToggle = document.getElementById('menu-toggle');
 const fullMenu = document.getElementById('full-menu');
 const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -241,11 +240,10 @@ const l3 = document.querySelector('.line-3');
 
 let isMenuOpen = false;
 
-// أنميشن القائمة
 const menuTl = gsap.timeline({ paused: true });
 
 menuTl.to(fullMenu, {
-    autoAlpha: 1, // يجمع بين opacity و visibility
+    autoAlpha: 1, 
     duration: 0.5,
     ease: "power2.inOut"
 })
@@ -260,14 +258,14 @@ menuTl.to(fullMenu, {
 menuToggle.addEventListener('click', () => {
     if (!isMenuOpen) {
         menuTl.play();
-        // تحويل الزر إلى X
+       
         gsap.to(l1, { rotation: 45, y: 8, duration: 0.3 });
         gsap.to(l2, { opacity: 0, x: -20, duration: 0.3 });
         gsap.to(l3, { rotation: -45, y: -8, duration: 0.3 });
-        document.body.style.overflow = 'hidden'; // منع السكرول عند فتح القائمة
+        document.body.style.overflow = 'hidden'; 
     } else {
         menuTl.reverse();
-        // إعادة الزر للوضع الطبيعي
+       
         gsap.to([l1, l3], { rotation: 0, y: 0, duration: 0.3 });
         gsap.to(l2, { opacity: 1, x: 0, duration: 0.3 });
         document.body.style.overflow = 'auto';
@@ -275,7 +273,7 @@ menuToggle.addEventListener('click', () => {
     isMenuOpen = !isMenuOpen;
 });
 
-// إغلاق القائمة فور الضغط على أي رابط
+
 mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
         menuTl.reverse();
@@ -286,7 +284,6 @@ mobileLinks.forEach(link => {
     });
 });
 
-// 1. أنميشن شاشة التحميل (معدل)
 const loadingTl = gsap.timeline();
 
 loadingTl.to("#loader-logo", { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" })
@@ -296,14 +293,13 @@ loadingTl.to("#loader-logo", { opacity: 1, scale: 1, duration: 0.8, ease: "power
       duration: 1.2, 
       ease: "expo.inOut" 
   })
-  // إظهار النافبار هنا فور انتهاء شاشة التحميل
   .to("#main-nav", { 
       opacity: 1, 
       y: 0, 
       duration: 0.8, 
       ease: "power2.out",
-      pointerEvents: "auto" // إعادة تفعيل الأزرار
-  }, "-=0.5") // يبدأ الظهور قبل انتهاء حركة الشاشة تماماً ليعطي سلاسة
+      pointerEvents: "auto" 
+  }, "-=0.5") 
   .add(() => {
       animateHeroText(0);
   });

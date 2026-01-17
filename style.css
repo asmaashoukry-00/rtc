@@ -63,7 +63,6 @@ body { letter-spacing: -0.02em; }
     transition: width 0.3s ease;
 }
 
-/* اللوح الرسمي */
 .official-slab {
     position: relative;
     background: #ffffff;
@@ -71,30 +70,26 @@ body { letter-spacing: -0.02em; }
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 2px; /* زوايا حادة لتعطي طابعاً رسمياً هندسياً */
-    /* ظلال مركبة تعطي إحساساً بالثقل والبروز (3D) */
+    border-radius: 2px; 
+   
     box-shadow: 
         0 10px 25px rgba(0, 0, 0, 0.02),
         10px 10px 40px rgba(74, 54, 45, 0.05);
-    border-left: 4px solid #A17A4A; /* خط جانبي يعطي هوية وفخامة */
-    transition: none; /* ثابت بدون Hover */
+    border-left: 4px solid #A17A4A; 
+    transition: none; 
 }
 
-/* مساحة المحتوى */
 .slab-content {
     padding: 40px;
     z-index: 2;
 }
 
-/* اللوجو - وضوح كامل */
 .gov-logo {
     max-height: 140px;
     width: auto;
-    /* إظهار اللوجو بوضوح تام مع فلتر طفيف لتوحيد المظهر */
     filter: contrast(1.05);
 }
 
-/* لمسة جمالية خلفية (مثل الختم المائي) */
 .slab-accent {
     position: absolute;
     bottom: 0;
@@ -115,7 +110,6 @@ body { letter-spacing: -0.02em; }
 
 
 
-/* زر الواتساب المضيء - Neon Glow WhatsApp */
 .whatsapp-btn-fixed {
     position: fixed;
     bottom: 30px;
@@ -133,14 +127,11 @@ body { letter-spacing: -0.02em; }
     transition: all 0.4s ease;
     border: none;
     outline: none;
-    /* الإضاءة الأساسية حول الزر */
     box-shadow: 0 0 20px rgba(37, 211, 102, 0.6), 
                 0 0 40px rgba(37, 211, 102, 0.4);
-    /* أنيميشن الإشعاع المستمر */
     animation: neon-glow 2s infinite alternate;
 }
 
-/* تأثير الإشعاع (Glow) المتغير */
 @keyframes neon-glow {
     0% {
         box-shadow: 0 0 10px rgba(37, 211, 102, 0.5), 
@@ -162,7 +153,6 @@ body { letter-spacing: -0.02em; }
     box-shadow: 0 0 30px rgba(37, 211, 102, 0.8), 
                 0 0 60px rgba(37, 211, 102, 0.6);}
 
-/* التنسيقات العامة للفوتر */
 .nav-link {
     position: relative;
     transition: color 0.3s;
@@ -235,12 +225,10 @@ footer img {
     border-radius: 20px;
 }
 /* ---- */
-/* منع ظهور القائمة في الشاشات الكبيرة */
 @media (min-width: 768px) {
     #full-menu { display: none !important; }
 }
 
-/* حركة الروابط في الموبايل */
 .mobile-link {
     transition: transform 0.3s ease;
 }
@@ -249,7 +237,6 @@ footer img {
     transform: scale(0.9);
 }
 
-/* تثبيت اللوجو والزر فوق القائمة */
 #main-nav img, #menu-toggle {
     position: relative;
     z-index: 110;
@@ -257,30 +244,25 @@ footer img {
 /* --- */
 #main-nav {
     opacity: 0;
-    transform: translateY(-20px); /* يجعله يبدأ من الأعلى قليلاً */
-    pointer-events: none; /* يمنع الضغط عليه وهو مخفي */
+    transform: translateY(-20px); 
+    pointer-events: none; 
 }
 
-/* تحسين شكل الصور في قسم من نحن للجوال */
 @media (max-width: 768px) {
     #about .rounded-\[2rem\] {
-        /* جعل الزوايا أقل حدة قليلاً في الجوال لتبدو أرشق */
         border-radius: 1.5rem; 
     }
     
     #about img {
-        /* ضمان عدم تمطط الصورة والحفاظ على أبعادها */
         object-fit: cover;
         width: 100%;
     }
 
-    /* إضافة مساحة سفلية للسكشن لمنع تداخل الصورة مع الكلام */
     #about .grid {
         gap: 5rem; 
     }
 }
 
-/* تأثير احترافي عند مرور الماوس أو اللمس */
 #about .overflow-hidden img {
     transition: transform 0.5s ease-in-out;
 }
